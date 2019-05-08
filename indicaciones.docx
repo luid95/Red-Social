@@ -1,0 +1,10 @@
+Indicaciones acercca del proyecto
+
+Folders:
+            controllers.- Creacion de controladores o funciones que se determinen a realizar determinada tarea.
+            helpers.-     Dejar codigo que puede ser reutilizable.
+            models.-      Para crear los modelos de datos.
+            public.-      Colocar todos los archivos que el usuario puede tener acceso desde el navegador. (imag, js, css)
+            routes.-      Definir las urls de nuestro servidor.
+            server.-      Colocar la logica de nuestro servidor.
+            views.-       Tener las vistar que el usuario podra ver por pantalla.
