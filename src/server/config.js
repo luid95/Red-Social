@@ -6,12 +6,16 @@ const exphbs = require('express-handlebars');
 
 const morgan = require('morgan');
 const multer = require('multer');
+const express = require('express');
+const erroHandler = require('errorhandler');
+
+const routes = require('../routes/index');
 
 module.exports = app =>{
     
     //settings
     app.set('port', process.env.PORT || 3000);// si hay un puerto en el sistema se utiliza si no ocupa el puerto 3000
-    app.set('views', path.join(__dirname, 'views'));//definir mi carpeta de vistas 'views'
+    app.set('views', path.join(__dirname, '../views'));//definir mi carpeta de vistas 'views'
     app.engine('.hbs', exphbs({
         defaultLayout: 'main',
         partialsDir: path.join(app.get('views'), 'partials'),//solo indica que la carpeta partials esta dentro de views
@@ -25,11 +29,19 @@ module.exports = app =>{
     //middlewares
     app.use(morgan('dev'));
     app.use(multer({dest: path.join(__dirname, '../public/upload/temp')}).single('image'));//para solo subir una imagen a la vez
-    
+    app.use(express.urlencoded());//para recibir datos que vengan desde formularios desde las plantillas html
+    app.use(express.json()); //para evitar la recargas, hacer el uso de ajax
 
     //routes
+    routes(app);
+
+    //static files
+    app.use('/public', express.static(path.join(__dirname, '../public')));
 
     //errorhandlers
+    if('development' === app.get('env')){
+        app.use(erroHandler);
+    }
 
     return app;
 }

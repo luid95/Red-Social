@@ -8,3 +8,13 @@ Folders:
             routes.-      Definir las urls de nuestro servidor.
             server.-      Colocar la logica de nuestro servidor.
             views.-       Tener las vistar que el usuario podra ver por pantalla.
+
+
+pendiente en el minuto 1:23
+** npm run dev //para correr index.js con nodemon
+
+[X]Terminar la primera parte de pagina web
+[X]Controladores y rutas
+[]Vistas de la pagina web
+[]Creacion de modelos
+[]Conexion de las vistas y nuestros modelos
