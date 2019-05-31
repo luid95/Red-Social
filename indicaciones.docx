@@ -10,11 +10,13 @@ Folders:
             views.-       Tener las vistar que el usuario podra ver por pantalla.
 
 
-pendiente en el minuto 1:23
+pendiente en el minuto 1:50
 ** npm run dev //para correr index.js con nodemon
 
 [X]Terminar la primera parte de pagina web
 [X]Controladores y rutas
+[X]Primer formulario
+[]Cargar imagenes
 []Vistas de la pagina web
 []Creacion de modelos
 []Conexion de las vistas y nuestros modelos
